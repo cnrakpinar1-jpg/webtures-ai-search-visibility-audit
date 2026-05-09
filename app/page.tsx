@@ -45,6 +45,18 @@ const SCORING_CRITERIA = [
 
 const FINDINGS = [
   {
+    title: "Consistent visibility in GEO and AI Search contexts",
+    description:
+      "Across Gemini, ChatGPT, Perplexity and Google observations, Webtures shows consistent visibility in GEO and AI Search related contexts. Broad SEO and digital marketing queries still show stronger competitor pressure and more crowded positioning.",
+    severity: "opportunity" as const,
+  },
+  {
+    title: "Source quality differs by platform",
+    description:
+      "Gemini answers did not include direct citations, while ChatGPT, Perplexity and Google answers surfaced references that frequently included Webtures-owned or listicle pages. Owned sources should not be read as independent validation, and scores should be interpreted with that distinction in mind.",
+    severity: "medium" as const,
+  },
+  {
     title: "Category ownership around GEO is still open",
     description:
       "Webtures can potentially strengthen its category ownership around GEO and AI Search Visibility before larger global agencies define the language for the Turkish market.",
@@ -204,11 +216,11 @@ export default function Home() {
       <section className="border-t border-white/5 py-16 md:py-20">
         <SectionHeader
           eyebrow="03 — Score Cards"
-          title="Scores derived from the placeholder dataset"
+          title="Scores derived from preliminary manual observations"
         />
         <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-500/[0.06] px-3 py-1 text-xs font-medium text-amber-300">
           <span className="h-1.5 w-1.5 rounded-full bg-amber-400" aria-hidden />
-          Sample score based on placeholder data — replace before submission.
+          Preliminary manual observations — AI answers may change over time.
         </div>
         <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-5">
           <ScoreCard
@@ -232,9 +244,9 @@ export default function Home() {
             description="Strength of the sources AI engines lean on for these answers."
           />
           <ScoreCard
-            label="Opportunity"
+            label="Opportunity · Current Dataset"
             value={opportunity}
-            description="Directional signal — higher means more unclaimed visibility surface."
+            description="Because this dataset is based on a limited manual snapshot, this score should be interpreted as a directional signal rather than a final performance metric. It mainly reflects mention gaps in the selected manual sample; competitor-pressure rows may affect it."
           />
         </div>
       </section>
@@ -246,9 +258,8 @@ export default function Home() {
           title="Per-query observations across platforms"
         />
         <p className="mt-3 max-w-3xl text-sm leading-relaxed text-neutral-400">
-          Every row below is a placeholder observation. The real version of this
-          table would be filled in manually using the collection checklist in
-          the README.
+          This is an exploratory manual dataset — not final truth. The current
+          set covers Gemini, ChatGPT, Perplexity and Google observations.
         </p>
         <div className="mt-8">
           <AuditTable items={auditItems} />

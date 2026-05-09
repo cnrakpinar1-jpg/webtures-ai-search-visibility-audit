@@ -52,11 +52,22 @@ export function AuditTable({ items }: Props) {
           <tbody className="divide-y divide-white/5 text-neutral-300">
             {items.map((item) => (
               <tr key={item.id} className="even:bg-white/[0.015]">
-                <td className="whitespace-nowrap px-4 py-3">
+                <td className="whitespace-nowrap px-4 py-3 align-top">
                   <span
                     className={`inline-flex items-center rounded-full border px-2 py-0.5 text-xs font-medium ${platformBadge[item.platform]}`}
                   >
                     {item.platform}
+                  </span>
+                  <span
+                    className={`mt-1.5 block text-[10px] font-medium uppercase tracking-wider ${
+                      item.collectionMethod === "manual"
+                        ? "text-emerald-300/80"
+                        : "text-neutral-500"
+                    }`}
+                  >
+                    {item.collectionMethod === "manual"
+                      ? "Manual"
+                      : "Placeholder"}
                   </span>
                 </td>
                 <td className="px-4 py-3">

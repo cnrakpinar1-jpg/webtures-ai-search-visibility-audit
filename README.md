@@ -2,6 +2,10 @@
 
 A proof-of-work GEO / AI Search Visibility audit prepared by **Çınar Akpınar** for a Visibility Intelligence / AI Analyst / AI-native Growth role at Webtures.
 
+## Live Demo
+
+[View the audit](https://webtures-ai-search-visibility-audit.vercel.app/)
+
 ## Purpose
 
 A single-page report that evaluates how brands appear across AI answer engines (ChatGPT, Gemini, Perplexity) and modern search environments (Google AI Overviews). It focuses on visibility, brand mention, position, context clarity, GEO relevance, and source quality.
@@ -64,13 +68,19 @@ npm run start   # serve the production build
 
 AI-generated answers change over time as models, indexes, and grounding sources evolve. Any single observation is a snapshot, not a permanent state. Treat results as **directional signals**, not final truth.
 
-## Placeholder data notice
+## Current dataset
 
-All audit observations in this repository are **sample/placeholder data**. Every record's `notes` field ends with:
+The dataset in [`data/auditData.ts`](data/auditData.ts) contains **26 manually collected observations** captured in a single snapshot on 2026-05-09:
 
-> *"Placeholder observation — replace with manually collected result."*
+| Platform   | Observations |
+| ---------- | -----------: |
+| Gemini     | 6            |
+| ChatGPT    | 6            |
+| Perplexity | 6            |
+| Google     | 8            |
+| **Total**  | **26**       |
 
-Before this report is used for anything beyond demonstration, the placeholder dataset in [`data/auditData.ts`](data/auditData.ts) must be replaced with manually collected observations using the checklist below.
+This is a single-pass exploratory snapshot, not a continuous tracker. AI answers and public-search results vary by location, personalization and time, so the same query set should be re-collected periodically using the checklist below to maintain a useful directional read. Source quality also varies by platform — Gemini answers did not include direct citations, while ChatGPT, Perplexity and Google answers often surfaced Webtures-owned or listicle pages, which should not be read as independent validation.
 
 ## Manual Data Collection Checklist
 
