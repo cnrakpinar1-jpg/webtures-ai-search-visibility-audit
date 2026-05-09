@@ -94,13 +94,28 @@ export function AuditTable({ items }: Props) {
                 <td className="whitespace-nowrap px-4 py-3">
                   <ScoreCell value={item.sourceQuality} />
                 </td>
-                <td className="px-4 py-3">
-                  <p
-                    className="line-clamp-2 max-w-md text-neutral-400"
-                    title={item.notes}
-                  >
-                    {item.notes}
-                  </p>
+                <td className="px-4 py-3 align-top">
+                  <details className="group max-w-md">
+                    <summary
+                      className="cursor-pointer list-none [&::-webkit-details-marker]:hidden [&::marker]:hidden"
+                      title={item.notes}
+                    >
+                      <p className="line-clamp-2 text-sm text-neutral-300 group-open:hidden">
+                        {item.notes}
+                      </p>
+                      <span className="mt-2 inline-block text-xs text-orange-300 hover:text-orange-200">
+                        <span className="group-open:hidden">
+                          Read full note
+                        </span>
+                        <span className="hidden group-open:inline">
+                          Hide note
+                        </span>
+                      </span>
+                    </summary>
+                    <div className="mt-2 rounded-lg border border-white/10 bg-white/[0.03] p-3 text-xs leading-relaxed text-neutral-300">
+                      {item.notes}
+                    </div>
+                  </details>
                 </td>
               </tr>
             ))}
