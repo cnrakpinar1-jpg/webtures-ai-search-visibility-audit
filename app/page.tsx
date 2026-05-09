@@ -246,9 +246,15 @@ export default function Home() {
           <ScoreCard
             label="Opportunity · Current Dataset"
             value={opportunity}
-            description="Because this dataset is based on a limited manual snapshot, this score should be interpreted as a directional signal rather than a final performance metric. It mainly reflects mention gaps in the selected manual sample; competitor-pressure rows may affect it."
+            description="Mention gap in the selected manual sample."
           />
         </div>
+        <p className="mt-4 text-xs leading-relaxed text-neutral-500">
+          Note: Opportunity Score mainly reflects mention gaps in this limited
+          manual sample. Competitor-pressure rows may affect it, so it should
+          be read as a directional snapshot rather than a final performance
+          metric.
+        </p>
       </section>
 
       {/* 5. Platform Findings Table */}
@@ -310,7 +316,7 @@ export default function Home() {
         />
         <div className="mt-6 max-w-2xl text-base leading-relaxed text-neutral-300">
           <p className="text-neutral-200">
-            AI-Native Growth &amp; Visibility Analyst Candidate
+            Visibility Intelligence / AI Analyst Candidate
           </p>
           <p className="mt-4 text-neutral-400">
             This project was built as a proof-of-work exercise to show how I
